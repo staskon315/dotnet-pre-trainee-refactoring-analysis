@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 
 public class Program
 {
@@ -11,13 +12,13 @@ public class Program
             1,
             "Anna",
             "anna@example.com",
-            "email");
+            new EmailNotification());
 
         userService.RegisterUser(
             2,
             "Christopher",
             "christopher@example.com",
-            "sms");
+            new SmsNotification());
 
         userService.UpdateEmail(
             1,
