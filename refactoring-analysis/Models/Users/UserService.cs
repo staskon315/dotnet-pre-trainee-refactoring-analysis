@@ -1,14 +1,15 @@
 
 using System.ComponentModel.DataAnnotations;
-public class UserService(UserRepository repository)
+public class UserService
 {
-    private readonly UserRepository _repository = repository;
+    private readonly IUserRepository _repository;
+    public UserService(IUserRepository repository) => _repository = repository;
 
     public void RegisterUser(
         int id,
         string name,
         string email,
-        AbstractNotification notification)
+        INotification notification)
     {
 
         if (!UserValidation.EmailISValid(email) || !UserValidation.NameIsValid(name)) return;
@@ -49,6 +50,14 @@ public class UserService(UserRepository repository)
 
         Console.WriteLine(
             $"LOG: Email for user {user.Name} was changed.");
+    }
+    public void PrintAllUsers()
+    {
+        foreach (var user in _repository.GetAll())
+        {
+            Console.WriteLine(
+                $"{user.Id} | {user.Name} | {user.Email} | Discount: {user.Discount}%");
+        }
     }
 
 
