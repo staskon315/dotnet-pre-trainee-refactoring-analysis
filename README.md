@@ -40,3 +40,31 @@ This project is a refactored version of  console application. The goal of the re
 **What was wrong:** The original list of users was accessible and could be modified or cleared from anywhere.
 **Principle Violated:** Encapsulation.
 **Design Change:** `UserRepository` hides the `List<User>` behind a `private` modifier. The `GetAll()` method returns an `IEnumerable<User>`, which allows iterating over the users  but prevents external code from adding or removing elements accidentally.
+
+---
+
+## How to Copy and Run
+
+
+
+### 1. Clone the repository
+
+```bash
+https://github.com/staskon315/dotnet-pre-trainee-refactoring-analysis.git
+
+```
+
+
+
+### 2. Navigate to the project folder
+
+```bash
+cd dotnet-pre-trainee-oop
+```
+
+
+### 3. Run the application
+
+```bash
+dotnet run
+```
