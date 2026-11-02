@@ -59,7 +59,7 @@ https://github.com/staskon315/dotnet-pre-trainee-refactoring-analysis.git
 ### 2. Navigate to the project folder
 
 ```bash
-cd dotnet-pre-trainee-oop
+cd dotnet-pre-trainee-refactoring-analysis
 ```
 
 
